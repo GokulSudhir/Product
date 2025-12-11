@@ -1,0 +1,119 @@
+﻿@{
+    ViewData["Title"] = "Product List";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <style>
+        .toolbar { margin-bottom:12px; display:flex; justify-content:flex-end; }
+
+        table th, table td {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="width: fit-content; margin: 0 auto;">
+
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 800px; margin-bottom:12px;">
+
+            <h2>Product List</h2>
+            <button onclick="openAddModal()" style="background: lightgreen;">Add Product</button>
+
+        </div>
+
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 800px;">
+            <thead>
+                <tr>
+                    <th>Product Code</th>
+                    <th>Product Name</th>
+                    <th>Brand</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="productsTableBody">
+                <!-- JS will insert rows here -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- Add Product Modal -->
+    <div id="addProductModal" style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    ">
+        <div style="
+        background: white;
+        padding: 20px;
+        width: 350px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        ">
+            <h3>Add Product</h3>
+
+            <label>Product Code</label>
+            <input type="text" id="pcode" style="width: 100%; margin-bottom: 10px;" />
+
+            <label>Product Name</label>
+            <input type="text" id="pname" style="width: 100%; margin-bottom: 10px;" />
+
+            <label>Brand</label>
+            <input type="text" id="pbrand" style="width: 100%; margin-bottom: 10px;" />
+
+            <label>Category</label>
+            <input type="text" id="pcategory" style="width: 100%; margin-bottom: 10px;" />
+
+            <br /><br />
+
+            <button id="cancelBtn">Cancel</button>
+            <button id="saveBtn" style="margin-left: 10px;">Save</button>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteConfirmModal" style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    ">
+        <div style="
+        background: white;
+        padding: 20px;
+        width: 300px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        ">
+            <h3>Confirm Delete</h3>
+
+            <p>Are you sure you want to delete this product?</p>
+
+            <br />
+
+            <button id="deleteCancelBtn">No</button>
+            <button id="deleteYesBtn" style="margin-left: 10px; background: red;">Yes</button>
+        </div>
+    </div>
+
+    <script src="/js/product/Index.js"></script>
+</body>
+</html>
