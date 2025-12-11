@@ -1,7 +1,6 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
     loadProducts();
 
-    // Wire the Save & Cancel buttons
     document.getElementById("saveBtn").addEventListener("click", saveProduct);
     document.getElementById("cancelBtn").addEventListener("click", closeAddModal);
 
